@@ -18,7 +18,7 @@
             @foreach($products as $product)
             <div class="col-md-4 mt-5">
                 <div class="card">
-                   <a href="/items/{{$product->id}}"> <img class="card-img-top" src="{{asset($product->path)}}" alt=""></a>
+                   <a href="/detail/{{$product->id}}"> <img class="card-img-top" src="{{asset($product->path)}}" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title text-center">{{$product->name}}<br>
                         <small>{{$product->maker}}</small></h4>

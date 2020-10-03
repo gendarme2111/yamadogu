@@ -2,27 +2,27 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-1.5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('new')}}">
             <img src="{{asset('/logos/icon_new.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="">    
             新商品</a>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-1.5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('wear')}}">
             <img src="{{asset('/logos/icon_kiru.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="">    
             ウェア</a>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-1.5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('shoes')}}">
             <img src="{{asset('/logos/icon_aruku.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="">    
             登山靴</a>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-1.5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('bag')}}">
             <img src="{{asset('/logos/icon_seou.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="">    
             ザック</a>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-1.5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('tent')}}">
             <img src="{{asset('/logos/icon_sumu.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="">    
             テント</a>
         </nav>
