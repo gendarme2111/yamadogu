@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 //トップページを標示
 Route::get('/','App\Http\Controllers\SiteController@showIndex')->name('index');
 
-Route::get('/detail', function () {
-    return view('yamadogu.detail');
-});
+//商品詳細を標示する
+Route::get('/items/{id}', 'App\Http\Controllers\SiteController@showDetail')->name('detail');
 
 Route::get('/confirm', function () {
     return view('yamadogu.confirm');
