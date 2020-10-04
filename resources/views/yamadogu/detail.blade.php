@@ -9,17 +9,13 @@
                     @for($i=0; $i<count($photos); $i++)
                     @if($i==0)
                     <div class="carousel-item active">
-                        <div class="card">
-                            <img class="card-img-top" src="{{asset($photos[$i]->path)}}" alt="">
-                        </div>
-                    </div>
                     @else
                     <div class="carousel-item">
+                    @endif
                         <div class="card">
                             <img class="card-img-top" src="{{asset($photos[$i]->path)}}" alt="">
                         </div>
                     </div>
-                    @endif
                     @endfor
                 </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -38,13 +34,22 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="row justify-content-left">
-               @foreach($photos as $photo)
+                <!-- サムネイルをクリックするとトップに表示される -->
+                @for($i=0; $i<count($photos); $i++)
+                @if($i==0)
                 <div class="col-md-2 mt-1">
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset($photo->path)}}" alt="">
+                    <div class="card active" data-target="#carouselExampleControls" data-slide-to="{{$i}}">
+                        <img class="card-img-top" src="{{asset($photos[$i]->path)}}" alt="">
                     </div>
                 </div>
-                @endforeach
+                @else
+                <div class="col-md-2 mt-1">
+                    <div class="card" data-target="#carouselExampleControls" data-slide-to="{{$i}}">
+                        <img class="card-img-top" src="{{asset($photos[$i]->path)}}" alt="">
+                    </div>
+                </div>
+                @endif
+                @endfor
             </div>
         </div>
     </div>
@@ -70,7 +75,7 @@
 </div>
 <div class="container">
     <div class="mt-5 text-center">
-        <button class="btn btn-dark w-35" role="button" href="#"><strong>カートに入れる</strong></button>
+        <a class="btn btn-dark w-35" role="button" href="/confirm/{{$product->id}}"><strong>カートに入れる</strong></a>
     </div>
 </div>
 @endsection

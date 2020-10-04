@@ -18,10 +18,6 @@ Route::get('/','App\Http\Controllers\SiteController@showIndex')->name('index');
 //商品詳細を表示する
 Route::get('/detail/{id}', 'App\Http\Controllers\SiteController@showDetail')->name('detail');
 
-Route::get('/confirm', function () {
-    return view('yamadogu.confirm');
-});
-
 //新商品一覧画面を表示
 Route::get('/new', 'App\Http\Controllers\SiteController@showNewproducts')->name('new');
 
@@ -36,3 +32,6 @@ Route::get('/backpack', 'App\Http\Controllers\SiteController@showBackpacks')->na
 
 //その他商品一覧画面を表示
 Route::get('/tent', 'App\Http\Controllers\SiteController@showVariousItems')->name('tent');
+
+//カート画面を表示する
+Route::get('/confirm/{id}', 'App\Http\Controllers\SiteController@showConfirm')->name('confirm');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Photo;
+//セッションを使用する
+use App\Http\Controllers\Controller,
+    Session;
 
 class SiteController extends Controller
 {
@@ -97,5 +100,33 @@ class SiteController extends Controller
         }
         $photos = Photo::where('product_id',$id)->orderBy('id','asc')->get();
         return view('yamadogu.detail',['product'=>$product,'photos'=>$photos]);
+    }
+    
+    /**
+     * カート画面を表示する
+     * @param int $id
+     * @return view
+     */
+
+    public function showConfirm($id)
+    {
+        $item = Product::find($id);
+        $products = Product::all();
+        session_start();
+        
+        // $_SESSION['name'] = $product->name;
+        // $_SESSION['id'] = $product->id;
+        // $_SESSION['price'] = $product->price;
+        // $_SESSION['path'] = $product->path;
+        // $_SESSION['order'] = 1;
+
+        $_SESSION['id'] = $item->id;
+
+        // idが存在しない場合はトップページへリダイレクトする
+        if(is_null($product)){
+            \Session::flash('err_msg','データがありません');
+            return redirect(route('index'));
+        }
+        return view('yamadogu.confirm',['products',$products]);
     }
 }
