@@ -32,8 +32,8 @@
             </a>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-3">
-            <form class="form-inline my-2 my-lg-0 ml-auto">
-                <input class="form-control mr-sm-2" type="text" placeholder="検索..." aria-label="検索...">
+            <form class="form-inline my-2 my-lg-0 ml-auto" action="{{'search'}}" method="get">
+                <input class="form-control mr-sm-2" type="text" placeholder="検索..." aria-label="検索..." name="word">
                 <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0">検索</button>
             </form>
         </nav>

@@ -176,4 +176,15 @@ class SiteController extends Controller
         return view('yamadogu.confirm');
     }
     }
+
+    public function search(Request $request) {
+        $search = $request->input('word');
+        if ($search != '') {
+            $products = Product::where('maker',$search)->orderBy('id','desc')->get();
+            // dd($products);
+          }else {
+            $products = Product::orderBy('id','desc')->get();
+          }
+        return view('yamadogu.search',['products'=>$products]);
+}
 }
