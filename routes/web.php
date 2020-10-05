@@ -35,3 +35,7 @@ Route::get('/tent', 'App\Http\Controllers\SiteController@showVariousItems')->nam
 
 //カート画面を表示する
 Route::get('/confirm/{id}', 'App\Http\Controllers\SiteController@showConfirm')->name('confirm');
+//セッションを解除する
+Route::get('/sessionout', 'App\Http\Controllers\SiteController@sessionOut')->name('sessionOut');
+//カートの注文数に変化があった場合の処理
+Route::post('/orderNumChange', 'App\Http\Controllers\SiteController@orderNumChange')->name('change');

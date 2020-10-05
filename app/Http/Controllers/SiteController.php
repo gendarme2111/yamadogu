@@ -93,6 +93,7 @@ class SiteController extends Controller
     public function showDetail($id)
     {
         $product = Product::find($id);
+        
         //idが存在しない場合はトップページへリダイレクトする
         if(is_null($product)){
             \Session::flash('err_msg','データがありません');
@@ -111,22 +112,68 @@ class SiteController extends Controller
     public function showConfirm($id)
     {
         $item = Product::find($id);
-        $products = Product::all();
-        session_start();
+        $item['orderNum'] = 1;
+        if(Session::exists($item->jan)){
         
-        // $_SESSION['name'] = $product->name;
-        // $_SESSION['id'] = $product->id;
-        // $_SESSION['price'] = $product->price;
-        // $_SESSION['path'] = $product->path;
-        // $_SESSION['order'] = 1;
-
-        $_SESSION['id'] = $item->id;
-
-        // idが存在しない場合はトップページへリダイレクトする
-        if(is_null($product)){
-            \Session::flash('err_msg','データがありません');
-            return redirect(route('index'));
+        }else{
+            Session::put($item->jan,'true');
+            session()->push('carts',$item);
+        // session()->put($item->jan,1);
         }
-        return view('yamadogu.confirm',['products',$products]);
+        // dd(Session::get($item->jan));
+        // idが存在しない場合はトップページへリダイレクトする
+        // if(is_null($item)){
+        //     \Session::flash('err_msg','データがありません');
+        //     return redirect(route('index'));
+        // }
+        return view('yamadogu.confirm');
+    }
+    public function sessionOut()
+    {
+        
+        session()->flush();
+        return view('yamadogu.confirm');
+    }
+
+    // public function orderNumChange(Request $request)
+    // {
+    //     $value = $request->input('name');
+        
+    //     // dd(Session::get($item->jan));
+    //     // idが存在しない場合はトップページへリダイレクトする
+    //     if(is_null($products)){
+    //         \Session::flash('err_msg','データがありません');
+    //         return redirect(route('index'));
+    //     }
+    //     return view('yamadogu.confirm');
+    // }
+
+    public function orderNumChange(Request $request) {
+        $orderNum = $request->orderNum;
+        $jan = $request->jan;
+        if($orderNum==0){
+            foreach(Session::get('carts') as $cart){
+            if($cart->jan == $jan){
+                $cart->orderNum=0;
+                Session::forget($jan);
+            }else{
+
+            }
+        }
+    
+            return view('yamadogu.confirm');
+        
+        }else{
+            foreach(Session::get('carts') as $cart){
+                if($cart->jan == $jan){
+                    $cart->orderNum=$orderNum;
+                break;
+                }else{
+    
+                }
+            }
+                // dd($cart->orderNum);
+        return view('yamadogu.confirm');
+    }
     }
 }
