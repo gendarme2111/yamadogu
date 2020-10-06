@@ -118,6 +118,14 @@ class SiteController extends Controller
         }else{
             Session::put($item->jan,'true');
             session()->push('carts',$item);
+            $count = session()->get('count');
+            if($count==null){
+                $count=1;
+                session()->put('count',$count);
+            }else{
+                $count=$count +1;
+                session()->put('count',$count);
+            }
         // session()->put($item->jan,1);
         }
         // dd(Session::get($item->jan));
@@ -133,6 +141,7 @@ class SiteController extends Controller
         
         session()->flush();
         return view('yamadogu.confirm');
+        session()->put('count',0);
     }
 
     // public function orderNumChange(Request $request)
@@ -152,6 +161,9 @@ class SiteController extends Controller
         $orderNum = $request->orderNum;
         $jan = $request->jan;
         if($orderNum==0){
+            $count = session()->get('count');
+            $count=$count-1;
+                session()->put('count',$count);
             foreach(Session::get('carts') as $cart){
             if($cart->jan == $jan){
                 $cart->orderNum=0;
@@ -180,11 +192,16 @@ class SiteController extends Controller
     public function search(Request $request) {
         $search = $request->input('word');
         if ($search != '') {
-            $products = Product::where('maker',$search)->orderBy('id','desc')->get();
+            $products = Product::Where('maker','like','%'.$search.'%')->orWhere('name','like','%'.$search.'%')->
+            orWhere('detail','like','%'.$search.'%')->orWhere('title','like','%'.$search.'%')->orderBy('id','desc')->get();
             // dd($products);
           }else {
-            $products = Product::orderBy('id','desc')->get();
+            $products = Product::orderBy('id','asc')->get();
           }
         return view('yamadogu.search',['products'=>$products]);
 }
+        public function showCart()
+        {
+        return view('yamadogu.confirm');
+        }
 }

@@ -44,3 +44,6 @@ Route::post('/orderNumChange', 'App\Http\Controllers\SiteController@orderNumChan
 
 //検索機能の実装
 Route::get('/search', 'App\Http\Controllers\SiteController@search')->name('search');
+
+//カート画面を表示する
+Route::get('/cart', 'App\Http\Controllers\SiteController@showCart')->name('cart');
