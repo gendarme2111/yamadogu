@@ -26,7 +26,7 @@
             <img src="{{asset('/logos/icon_sumu.svg')}}" width="30" height="30" class="d-inline-block align-top" alt="">    
             テント</a>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-1.5">
             <a class="navbar-brand" href="{{route('cart')}}">
             @if(session()->get('count')==0||session()->get('count')==null)
             <img src="{{asset('/logos/icon_cart.svg')}}" width="35" height="35" class="d-inline-block align-top" alt="">
@@ -36,10 +36,12 @@
             </a>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-3">
-            <form class="form-inline my-2 my-lg-0 ml-auto" action="{{'search'}}" method="get">
-                <input class="form-control mr-sm-2" type="text" placeholder="検索..." aria-label="検索..." name="word">
-                <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0">検索</button>
-            </form>
+            <div class="pl-3">
+                <form class="form-inline my-2 my-lg-0 ml-auto" action="{{'search'}}" method="get">
+                    <input class="form-control mr-sm-2" type="text" placeholder="検索..." aria-label="検索..." name="word">
+                    <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0">検索</button>
+                </form>
+            </div>
         </nav>
     </dix>
 </div>

@@ -46,4 +46,4 @@ Route::post('/orderNumChange', 'App\Http\Controllers\SiteController@orderNumChan
 Route::get('/search', 'App\Http\Controllers\SiteController@search')->name('search');
 
 //カート画面を表示する
-Route::get('/cart', 'App\Http\Controllers\SiteController@showCart')->name('cart');
+Route::view('/cart','yamadogu.confirm')->name('cart');

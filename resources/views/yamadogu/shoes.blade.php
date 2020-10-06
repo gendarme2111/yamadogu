@@ -1,11 +1,7 @@
-@extends('layout')
+@extends('layout2')
 @section('title','シューズ一覧')
+@section('about','OUTDOOR SHOES')
 @section('content')
-<div class="container">
-    <div class="text-sm-center font-italic mt-5">
-        <h1>OUTDOOR SHOES</h1>
-    </div>
-</div>
 <div class="mt-5">
     <div class="row">
     @foreach($shoes as $shoe)
@@ -13,8 +9,8 @@
             <div class="card">
                 <a href="/detail/{{$shoe->id}}"><img class="card-img-top" src="{{asset($shoe->path)}}" alt=""></a>
                 <div class="card-body">
-                    <h4 class="card-title text-center">{{$shoe->name}}<br>
-                    <small>{{$shoe->maker}}</small></h4>
+                    <h5 class="card-title text-center">{{$shoe->name}}<br>
+                    <small>{{$shoe->maker}}</small></h5>
                     <p class="card-text">{{$shoe->title}}</p>
                 </div>
             </div>

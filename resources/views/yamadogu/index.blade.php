@@ -3,7 +3,7 @@
 @section('headerimg')
     <div class="jumbotron" style="background:url(images/hotaka01.jpg); background-size:cover;">
         <div class="col-md-6 px-0 mx-auto">
-            <h1 class="display-4 font-italic">Welcome to your favorite online mountain store</h1>
+            <h1 class="display-5 font-italic">Welcome to your favorite online mountain store</h1>
             <p class="lead my-3">Our goal is that you enjoy a safe equipment in which you feel comfortable and to enjoy your outdoor activities.The satisfaction of our customers is our absolute maximum.  </p>
         </div>
     </div>

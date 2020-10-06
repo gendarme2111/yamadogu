@@ -1,11 +1,7 @@
-@extends('layout')
-@section('title','バッグ一覧')
+@extends('layout2')
+@section('title','ザック一覧')
+@section('about','BACK PACKS')
 @section('content')
-<div class="container">
-    <div class="text-sm-center font-italic mt-5">
-        <h1>BACK PACKS</h1>
-    </div>
-</div>
 <div class="mt-5">
     <div class="row">
     @foreach($bags as $bag)
@@ -13,8 +9,8 @@
             <div class="card">
                 <a href="/detail/{{$bag->id}}"><img class="card-img-top" src="{{asset($bag->path)}}" alt=""></a>
                 <div class="card-body">
-                    <h4 class="card-title text-center">{{$bag->name}}<br>
-                    <small>{{$bag->maker}}</small></h4>
+                    <h5 class="card-title text-center">{{$bag->name}}<br>
+                    <small>{{$bag->maker}}</small></h>
                     <p class="card-text">{{$bag->title}}</p>
                 </div>
             </div>

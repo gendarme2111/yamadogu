@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Photo;
@@ -19,8 +20,8 @@ class SiteController extends Controller
 
     public function showNewProducts()
     {
-        $products = Product::latest()->get();
-        // dd($products);
+        // $products = Product::latest()->get();
+        $products = Product::latest()->simplePaginate(12);
         return view('yamadogu.new',['products'=>$products]);
     }
 
@@ -126,7 +127,6 @@ class SiteController extends Controller
                 $count=$count +1;
                 session()->put('count',$count);
             }
-        // session()->put($item->jan,1);
         }
         // dd(Session::get($item->jan));
         // idが存在しない場合はトップページへリダイレクトする
@@ -136,26 +136,25 @@ class SiteController extends Controller
         // }
         return view('yamadogu.confirm');
     }
+
+    /**
+     * ログアウト画面を表示する
+     * 
+     * @return view
+     */
+
     public function sessionOut()
     {
-        
         session()->flush();
         return view('yamadogu.confirm');
         session()->put('count',0);
     }
 
-    // public function orderNumChange(Request $request)
-    // {
-    //     $value = $request->input('name');
-        
-    //     // dd(Session::get($item->jan));
-    //     // idが存在しない場合はトップページへリダイレクトする
-    //     if(is_null($products)){
-    //         \Session::flash('err_msg','データがありません');
-    //         return redirect(route('index'));
-    //     }
-    //     return view('yamadogu.confirm');
-    // }
+    /**
+     * カート画面のプルダウンのフォーム処理
+     * @param int Request $request
+     * @return view
+     */
 
     public function orderNumChange(Request $request) {
         $orderNum = $request->orderNum;
@@ -172,22 +171,24 @@ class SiteController extends Controller
 
             }
         }
-    
             return view('yamadogu.confirm');
-        
         }else{
             foreach(Session::get('carts') as $cart){
                 if($cart->jan == $jan){
                     $cart->orderNum=$orderNum;
                 break;
                 }else{
-    
                 }
             }
-                // dd($cart->orderNum);
-        return view('yamadogu.confirm');
-    }
-    }
+            return view('yamadogu.confirm');
+        }
+        }
+        
+    /**
+     * 検索処理
+     * @param int Request $request
+     * @return view
+     */
 
     public function search(Request $request) {
         $search = $request->input('word');
@@ -199,9 +200,5 @@ class SiteController extends Controller
             $products = Product::orderBy('id','asc')->get();
           }
         return view('yamadogu.search',['products'=>$products]);
-}
-        public function showCart()
-        {
-        return view('yamadogu.confirm');
-        }
+    }
 }
