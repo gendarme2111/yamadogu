@@ -41,82 +41,17 @@
     </div>
     <div class="mt-5">
         <div class="row">
+            @foreach($recommends as $recommend)
             <div class="col-md-3">
                 <div class="card">
-                    <img class="card-img-top" src="images_item/kutsu1.jpg" alt="">
+                    <a href="/detail/{{$recommend->id}}"><img class="card-img-top" src="{{asset($recommend->path)}}" alt=""></a>
                     <div class="card-body">
-                        <h4 class="card-title text-center">La Sportiva</h4>
-                        <p class="card-text">La Spotiva人気のM5の待望の新作です。</p>
+                        <h4 class="card-title text-center">{{$recommend->name}}</h4>
+                        <p class="card-text">{{$recommend->title}}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="images_item/t1.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Nanga</h4>
-                        <p class="card-text">Nanga速乾性のインナーシャツです。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="images_item/t2.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">AROE rea</h4>
-                        <p class="card-text">AROE REA人気のエオTの新作です。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="images_item/t1.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Nanga</h4>
-                        <p class="card-text">Nanga速乾性のインナーシャツです。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mt-5">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="images_item/kutsu1.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">La Sportiva</h4>
-                        <p class="card-text">La Spotiva人気のM5の待望の新作です。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="images_item/t1.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Nanga</h4>
-                        <p class="card-text">Nanga速乾性のインナーシャツです。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="images_item/t2.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">AROE rea</h4>
-                        <p class="card-text">AROE REA人気のエオTの新作です。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top" src="images_item/t1.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Nanga</h4>
-                        <p class="card-text">Nanga速乾性のインナーシャツです。</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="container">

@@ -82,7 +82,8 @@ class SiteController extends Controller
     public function showIndex()
     {
         $products = Product::latest()->limit(6)->get();
-        return view('yamadogu.index',['products'=>$products]);
+        $recommends = Product::inRandomOrder()->take(8)->get();
+        return view('yamadogu.index',['products'=>$products,'recommends'=>$recommends]);
     }
 
     /**
@@ -98,7 +99,7 @@ class SiteController extends Controller
         //idが存在しない場合はトップページへリダイレクトする
         if(is_null($product)){
             \Session::flash('err_msg','データがありません');
-            return redirect(route('index'));
+            return redirect(route('search',$id));
         }
         $photos = Photo::where('product_id',$id)->orderBy('id','asc')->get();
         return view('yamadogu.detail',['product'=>$product,'photos'=>$photos]);
