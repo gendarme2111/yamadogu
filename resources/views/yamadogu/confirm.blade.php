@@ -64,8 +64,69 @@
         </div> 
         <div class="container">
             <div class="mt-5 text-center">
-                <button class="btn btn-dark w-35" role="button" href="#"><strong>購入する</strong></button>
+            <button type="button" class="btn btn-dark w-35" role="button" data-toggle="modal" data-target="#Modal"><strong>購入する</strong></button>
             </div>
+            <!-- モーダル -->
+            <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title mx-auto mt-3" id="Modal"><h4>購入商品の確認</h4></div>
+                </div>
+                <div class="modal-body mx-auto w-75">
+                    @if(Session::exists('carts'))
+                    <table class="table table-borderless">
+                        <thread>
+                            <tr class="d-flex">
+                                <th class="col-xs-3"></th>
+                                <th class="col-xs-2"></th>
+                                <th class="col-xs-1"></th>
+                                <th class="col-xs-2"></th>
+                            </tr>
+                        </thread>
+                        @foreach(Session::get('carts') as $cart)
+                        @if($cart->orderNum!=0)
+                        <tr>
+                            <td><h5>{{$cart->name}}</h5></td>
+                            <td><h5>￥{{$cart->price}}</h5></td>
+                            <td><h5>{{$cart->orderNum}}点</h5></td>
+                            <td><h5>＝　￥{{$cart->price*$cart->orderNum}}</h5></td>
+                        </tr>     
+                        @else
+                        @endif
+                        @endforeach
+                    </table>
+                        @else
+                        <div class="text-center pt-5 pb-5">
+                            <p>カートには何も保存されていません</p>
+                        </div>
+                        @endif
+                    </div>
+                    <div class="mx-auto">
+                        <h4>合計：￥
+                        @if(Session::exists('carts'))
+                        <?php $totalprice=0; ?>
+                        @foreach(Session::get('carts') as $cart)
+                        <?php $total = 0; 
+                            $total += ($cart->price)*($cart->orderNum) ;
+                            $totalprice += $total;
+                        ?>
+                        @endforeach  
+                        <?php echo($totalprice);?>   
+                        @else
+                        <?php $total=0;
+                        echo($total); 
+                        ?> 
+                        @endif
+                        </h4>
+                    </div> 
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                        <button type="button" class="btn btn-primary">購入する</button>
+                    </div>
+                </div>
+            </div>
+            <!-- モーダル終了 -->
         </div>
         <div class="container">
             <div class="mt-5 text-center">
