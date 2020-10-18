@@ -19,8 +19,7 @@ class CreatePhotosTable extends Migration
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');
             $table->string('path');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
         }
     }
@@ -33,4 +32,6 @@ class CreatePhotosTable extends Migration
     {
         Schema::dropIfExists('photos');
     }
+    
+    
 }

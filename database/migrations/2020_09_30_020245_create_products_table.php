@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        if(Schema::hasTable('products')){
+        if(!Schema::hasTable('products')){
         Schema::create('products', function (Blueprint $table) {
             $table->increments("id");
             $table->string('jan')->uniqid();
@@ -24,8 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->text('detail');
             $table->string('path');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
         }
     }
@@ -39,4 +38,5 @@ class CreateProductsTable extends Migration
     {
         Schema::dropIfExists('products');
     }
+    
 }
