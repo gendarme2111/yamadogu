@@ -42,7 +42,7 @@
     <div class="mt-5">
         <div class="row">
             @foreach($recommends as $recommend)
-            <div class="col-md-3">
+            <div class="col-md-3 mt-5">
                 <div class="card">
                     <a href="/detail/{{$recommend->id}}"><img class="card-img-top" src="{{asset($recommend->path)}}" alt=""></a>
                     <div class="card-body">
