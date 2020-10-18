@@ -10,7 +10,7 @@
                 <a href="/detail/{{$bag->id}}"><img class="card-img-top" src="{{asset($bag->path)}}" alt=""></a>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{$bag->name}}<br>
-                    <small>{{$bag->maker}}</small></h>
+                    <small>{{$bag->maker}}</small></h5>
                     <p class="card-text">{{$bag->title}}</p>
                 </div>
             </div>
