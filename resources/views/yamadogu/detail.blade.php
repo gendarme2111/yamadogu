@@ -60,7 +60,7 @@
             <dl>
                 <dt>
                     <h2>{{$product->name}}
-                        <small>{{$product->maker}}</small>
+                        <small class="font-italic">{{$product->maker}}</small>
                     </h2>
                 <dt>
                 <dd>

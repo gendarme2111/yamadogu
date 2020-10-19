@@ -10,7 +10,7 @@
                 <a href="/detail/{{$tent->id}}"><img class="card-img-top img-fluid" src="{{asset($tent->path)}}" alt="Responsive image"></a>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{$tent->name}}<br>
-                    <small>{{$tent->maker}}</small></h5>
+                    <small class="font-italic">{{$tent->maker}}</small></h5>
                     <p class="card-text">{{$tent->title}}</p>
                 </div>
             </div>

@@ -10,7 +10,7 @@
                 <a href="/detail/{{$product->id}}"><img class="card-img-top img-fluid" src="{{asset($product->path)}}" alt="Responsive image"></a>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{$product->name}}<br>
-                    <small>{{$product->maker}}</small></h5>
+                    <small class="font-italic">{{$product->maker}}</small></h5>
                     <p class="card-text">{{$product->title}}</p>
                 </div>
             </div>
