@@ -73,7 +73,7 @@
                 <div class="modal-header">
                     <div class="modal-title mx-auto mt-3" id="Modal"><h4>購入商品の確認</h4></div>
                 </div>
-                <div class="modal-body mx-auto w-75">
+                <div class="modal-body mx-auto w-lg-75">
                     @if(Session::exists('carts'))
                     <table class="table table-borderless">
                         <thread>
