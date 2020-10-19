@@ -10,7 +10,7 @@
             @if($cart->orderNum!=0)
             <div class="row border-top border-bottom">
                 <div class="col-md-3">
-                    <img src="{{asset($cart->path)}}" class="img-fluid img-thumbnail" alt="">
+                    <img src="{{asset($cart->path)}}" class="img-fluid img-thumbnail" alt="Responsive image">
                 </div>
                 <div class="col-md-8 d-flex align-items-center">
                     <div>

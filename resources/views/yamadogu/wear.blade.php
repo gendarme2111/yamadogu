@@ -7,7 +7,7 @@
     @foreach($wears as $wear)
         <div class="col-md-3 mt-5">
             <div class="card">
-                <a href="/detail/{{$wear->id}}"><img class="card-img-top" src="{{asset($wear->path)}}" alt=""></a>
+                <a href="/detail/{{$wear->id}}"><img class="card-img-top img-fluid" src="{{asset($wear->path)}}" alt="Responsive image"></a>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{$wear->name}}<br>
                     <small>{{$wear->maker}}</small></h5>

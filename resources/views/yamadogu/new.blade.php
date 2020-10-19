@@ -7,7 +7,7 @@
     @foreach($products as $product)
         <div class="col-md-3 mt-5">
             <div class="card">
-                <a href="/detail/{{$product->id}}"><img class="card-img-top" src="{{asset($product->path)}}" alt=""></a>
+                <a href="/detail/{{$product->id}}"><img class="card-img-top img-fluid" src="{{asset($product->path)}}" alt="Responsive image"></a>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{$product->name}}<br>
                     <small>{{$product->maker}}</small></h5>

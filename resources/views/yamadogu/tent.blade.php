@@ -7,7 +7,7 @@
     @foreach($tents as $tent)
         <div class="col-md-3 mt-5">
             <div class="card">
-                <a href="/detail/{{$tent->id}}"><img class="card-img-top" src="{{asset($tent->path)}}" alt=""></a>
+                <a href="/detail/{{$tent->id}}"><img class="card-img-top img-fluid" src="{{asset($tent->path)}}" alt="Responsive image"></a>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{$tent->name}}<br>
                     <small>{{$tent->maker}}</small></h5>

@@ -39,13 +39,13 @@
                 @if($i==0)
                 <div class="col-md-2 mt-1">
                     <div class="card active" data-target="#carouselExampleControls" data-slide-to="{{$i}}">
-                        <img class="card-img-top" src="{{asset($photos[$i]->path)}}" alt="">
+                        <img class="card-img-top img-fluid" src="{{asset($photos[$i]->path)}}" alt="Responsive image">
                     </div>
                 </div>
                 @else
                 <div class="col-md-2 mt-1">
                     <div class="card" data-target="#carouselExampleControls" data-slide-to="{{$i}}">
-                        <img class="card-img-top" src="{{asset($photos[$i]->path)}}" alt="">
+                        <img class="card-img-top img-fluid" src="{{asset($photos[$i]->path)}}" alt="Responsive image">
                     </div>
                 </div>
                 @endif
