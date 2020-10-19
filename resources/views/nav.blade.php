@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <image  class="navbar-toggler" data-toggle="collapse" src="{{asset('/images/yamadogu1.png')}}" width="30%" height="30%">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img class="nav-brand" src="{{asset('/logos/navi_icon.svg')}}" width="30" height="30" alt="">
   </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
