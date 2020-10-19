@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <image  class="navbar-toggler" data-toggle="collapse" src="{{asset('/images/yamadogu1.png')}}" width="30%" height="30%">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="{{route('index')}}" class="w-75 h-100">
+    <image class="navbar-toggler" data-toggle="collapse" src="{{asset('/images/yamadogu1.png')}}" width="40%" height="40%">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <img class="nav-brand" src="{{asset('/logos/navi_icon.svg')}}" width="30" height="30" alt="">
-  </button>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav w-75 justify-content-center">

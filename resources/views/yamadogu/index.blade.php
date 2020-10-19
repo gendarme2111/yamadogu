@@ -31,7 +31,7 @@
     </div>
     <div class="container">
         <div class="mt-5 text-center">
-            <a class="btn btn-dark w-35" role="button" href="{{route('new')}}"><strong>新商品一覧</strong></a>
+            <a class="btn btn-dark w-25" role="button" href="{{route('new')}}"><strong>新商品一覧</strong></a>
         </div>
     </div>
     <div class="container">
@@ -56,7 +56,7 @@
     </div>
     <div class="container">
         <div class="mt-5 text-center">
-            <button class="btn btn-dark w-35" role="button" href="#"><strong>お薦め一覧</strong></button>
+            <button class="btn btn-dark w-25" role="button" href="#"><strong>お薦め一覧</strong></button>
         </div>
     </div>
 </div>
