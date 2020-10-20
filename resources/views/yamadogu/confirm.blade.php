@@ -120,9 +120,18 @@
                         @endif
                         </h4>
                     </div> 
-                    <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">閉じる</button>
-                        <button type="button" class="btn btn-primary w-25">購入する</button>
+                    <!-- buttonをlgで縦並びに切り替え -->
+                    <div class="d-none d-md-block">
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">閉じる</button>
+                            <button type="button" class="btn btn-primary w-25">購入する</button>
+                        </div>
+                    </div>
+                    <div class="d-block d-md-none">
+                        <div class="btn-group-vertical modal-footer justify-content-center">
+                            <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">閉じる</button>
+                            <button type="button" class="btn btn-primary w-25">購入する</button>
+                        </div>
                     </div>
                 </div>
             </div>

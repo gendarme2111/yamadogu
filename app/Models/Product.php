@@ -10,10 +10,14 @@ class Product extends Model
     //テーブル名
     protected $table = 'products';
 
-    //可変項目
+    //不変項目
     protected $guarded = ['id'];
 
     // public function path(){
     //     return $this->hasMany('App\Models\Photo');
 
+    public function photos()
+    {
+        return $this->hasMany('App\Models\Photo');
+    }
 }

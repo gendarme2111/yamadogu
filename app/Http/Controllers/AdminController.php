@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Photo;
 // use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -26,6 +28,22 @@ class AdminController extends Controller
 
     public function showCreate()
     {
+        return view('yamadogu.Admin.create');
+    }
+
+    public function index()
+    {
+        $items = Item::all();
+        return view('yamadogu.Admin.index',compact('items'));
+    }
+
+    public function create(Request $request)
+    {
+        //POST
+        if($request->isMethod('POST')){
+            dd($request->all());
+        }
+        //GET
         return view('yamadogu.Admin.create');
     }
 }

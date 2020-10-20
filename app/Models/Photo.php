@@ -10,11 +10,16 @@ class Photo extends Model
     //テーブル名
     protected $table = 'photos';
 
-    //可変項目
+    //不変項目
     protected $guarded = ['id'];
 
     // public function getData(){
 
     //     return $this->path;
+
+    public function item()
+    {
+        return $this->belongsTo('App\Models\Product');
+    }   
 
 }
