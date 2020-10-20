@@ -75,7 +75,7 @@
 </div>
 <div class="container">
     <div class="mt-5 text-center">
-        <a class="btn btn-dark w-35" role="button" href="/confirm/{{$product->id}}"><strong>カートに入れる</strong></a>
+        <a class="btn-block w-50 mx-auto" role="button" href="/confirm/{{$product->id}}"><strong>カートに入れる</strong></a>
     </div>
 </div>
 @endsection

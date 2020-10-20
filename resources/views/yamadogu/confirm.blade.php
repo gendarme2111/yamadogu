@@ -64,7 +64,7 @@
         </div> 
         <div class="container">
             <div class="mt-5 text-center">
-            <button type="button" class="btn btn-dark w-35" role="button" data-toggle="modal" data-target="#Modal"><strong>購入する</strong></button>
+            <button type="button" class="btn btn-dark btn-block w-50 mx-auto" role="button" data-toggle="modal" data-target="#Modal"><strong>購入する</strong></button>
             </div>
             <!-- モーダル -->
             <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
@@ -120,17 +120,17 @@
                         @endif
                         </h4>
                     </div> 
-                    <div class="modal-footer d-flex justify-content-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                        <button type="button" class="btn btn-primary">購入する</button>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">閉じる</button>
+                        <button type="button" class="btn btn-primary w-25">購入する</button>
                     </div>
                 </div>
             </div>
             <!-- モーダル終了 -->
         </div>
-        <div class="container">
+        <div class="container px-0">
             <div class="mt-5 text-center">
-                <a class="btn btn-dark w-35" role="button" href="{{route('sessionOut')}}"><strong>カートを空にする</strong></a>
+                <a class="btn btn-dark w-50" role="button" href="{{route('sessionOut')}}"><strong>カートを空にする</strong></a>
             </div>
         </div>
     </div>
