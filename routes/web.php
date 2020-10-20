@@ -54,6 +54,8 @@ Route::view('/Admin/admin','yamadogu.Admin.admin')->name('admin');
 //商品アップロード画面に遷移する
 Route::get('/Admin/create','App\Http\Controllers\AdminController@showCreate')->name('create');
 
-Route::get('/Admin/products','App\Http\Controllers\AdminController@index');
+Route::get('/Admin/admin','App\Http\Controllers\AdminController@index');
 
-Route::match(['GET','POST'],'/Admin/create','App\Http\Controllers\AdminController@create');
+Route::match(['GET','POST'],'/Admin/admin','App\Http\Controllers\AdminController@create');
+
+Route::match(['GET','POST'],'/Admin/test','App\Http\Controllers\AdminController@test');
