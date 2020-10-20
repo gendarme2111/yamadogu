@@ -47,3 +47,9 @@ Route::get('/search', 'App\Http\Controllers\SiteController@search')->name('searc
 
 //カート画面を表示する
 Route::view('/cart','yamadogu.confirm')->name('cart');
+
+//管理者画面に遷移する
+Route::view('/Admin/admin','yamadogu.Admin.admin')->name('admin');
+
+//商品アップロード画面に遷移する
+Route::get('/Admin/create','App\Http\Controllers\AdminController@showCreate')->name('create');
