@@ -46,7 +46,7 @@
       </div>
       <div class="form-group">
         <label for="title">見出し</label>
-        <input type="text" class="form-control" id="title" placeholder="">
+        <input type="text" class="form-control" name="title" placeholder="">
       </div>
       <div class="form-group">
         <label for="detail">詳細</label>
