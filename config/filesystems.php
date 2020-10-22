@@ -57,8 +57,8 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' =>'AKIAY5HTCRQASUQO2TWI',
-            'secret' =>'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',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' =>env('AWS_SECRET_ACCESS_KEY'),
             'region' =>'ap-northeast-1',
             'bucket' =>'yamadoguapp',
             'url' =>'https://s3-ap-northeast-1.amazonaws.com/',
